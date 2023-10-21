@@ -9,6 +9,9 @@ import pytesseract
 import numpy as np
 from PIL import Image, ImageChops
 
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"  # Path to Tesseract executable on Render
+
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['IMAGES_FOLDER'] = 'images'
