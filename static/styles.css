@@ -1,50 +1,63 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    padding: 50px;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
 
 .container {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #ffffff;
+    max-width: 80%;
+    margin: 0 auto;
     padding: 20px;
+  text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #E4E9FD;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+
+h1 {
+    color: #001F3F; /* Navy Blue */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 
 form {
     margin-bottom: 20px;
+
 }
 
-#imagePreviewContainer {
-    margin-bottom: 20px;
+input {
+  margin-top: 1rem;
 }
 
-#imagePreview {
-    width: 100px;
-    height: 100px;
-    margin: 20 auto;
+input::file-selector-button {
+  font-weight: bold;
+  color: #0c3eb5;
+  padding: 0.5em;
+  border: thin solid grey;
+  border-radius: 3px;
+  background: #5783db;
+  color: #2e2f32;
+
+}
+
+#fileInput {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-.container {
-    text-align: center;
-    margin-top: 50px;
+   background: #efefef;
+  text-color: #2e2f32;
 }
 
 .message {
     font-size: 18px;
     margin-bottom: 20px;
-}
-
-#imagePreviewContainer {
-    margin-top: 20px;
 }
 
 
@@ -55,16 +68,22 @@ form {
 
 button {
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #5783db;
     color: #ffffff;
+
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.4s;
+
 }
 
 button:hover {
     background-color: #45a049;
+   color: #494949 !important;
+border-radius: 50px;
+border-color: #494949 !important;
+transition: all 0.3s ease 0s;
 }
 
 .success {
@@ -73,4 +92,60 @@ button:hover {
 
 .error {
     color: #f44336;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+  width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.2);
+  background: #efefef;
+  transition: border-color 0.5s ease, box-shadow 0.3s ease, background 0.3s ease;/* Smooth transition effect for shadow and background */
+}
+
+canvas:hover {
+    border-color: #007bff; /* Border color on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    background: #ffffff; /* Change background color on hover if desired */
+    transform: scale(1.01); /* Slight scale-up animation on hover */
+  animation: none;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin .5s linear infinite, changeColor .5s ease infinite; /* Apply both spin and color change animations */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    display: none; /* Initially hide the spinner */
+}
+h1 {
+    color: #008080; /* Navy Blue */
+}
+
+
+.copyright {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes changeColor {
+    0% { border-top-color: #3498db; }
+    50% { border-top-color: #e74c3c; } /* Change color halfway through the animation */
+    100% { border-top-color: #3498db; }
 }
