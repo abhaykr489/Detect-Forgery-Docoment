@@ -6,20 +6,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
     <title>Forgery Detection App</title>
 </head>
 <body>
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+</script>
     <div class="container">
         <h1>Forgery Detection App</h1>
         <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" name="file" id="fileInput" required>
-            <button id="submitBtn" type="submit">Detect Forgery</button>
+            <p>
+                <input type="file" name="file" id="fileInput" accept="image/*"  onchange="upload()" required>
+                <button id="submitBtn" type="submit">Detect Forgery</button>
+                <div class="loading-spinner"></div>
+
+            </p>
+            <div>
+                <div id="result" class="message"></div>
+                <div id="forgeryInfo"></div>
+            </div>
+            <p>
+                <h2 id="detail">Uploaded Image</h2>
+                <canvas id= "canv1" ></canvas>
+            </p>
+
         </form>
-        <div id="result" class="message"></div>
-        <div id="imagePreviewContainer">
-            <div id="imagePreview"></div>
-        </div>
-        <div id="forgeryInfo"></div> <!-- New div to display forgery information -->
+        <p class="copyright">Created by team: Abhay © 2023</p>
+         <!-- New div to display forgery information -->
     </div>
 </body>
 </html>
